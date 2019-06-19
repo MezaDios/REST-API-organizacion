@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 import newRoutes from './routes/newRoutes';
+import loginRoutes from './routes/loginRoutes';
 import mongoose from './database';
 
 class Server {
@@ -26,6 +27,7 @@ class Server {
 
     private routes(): void {
         this.app.use('/api/news', newRoutes);
+        this.app.use('/api/login', loginRoutes);
     }
 
     public start(): void {

@@ -10,4 +10,6 @@ const newSchema = new Schema({
     image: { type: String, required: true }
 });
 
-export default mongoose.model('news', newSchema);
+const model = mongoose.model('news', newSchema, 'news');
+
+export default model;
