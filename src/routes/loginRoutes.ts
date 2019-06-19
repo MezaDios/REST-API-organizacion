@@ -14,6 +14,7 @@ class LoginRoutes {
     private config(): void {
 
         this.router.post('/', loginCtrl.login);
+        this.router.post('/create', loginCtrl.createUser);
     }
 
 }

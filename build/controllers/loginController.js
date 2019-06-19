@@ -14,6 +14,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const userModel_1 = __importDefault(require("../models/userModel"));
 class LoginCtrl {
     constructor() {
+        this.createUser = (req, res) => __awaiter(this, void 0, void 0, function* () {
+            const user = yield new userModel_1.default(req.body);
+            yield user.save();
+        });
         this.login = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const users = yield userModel_1.default.find(req.body);
             if (users.length == 0) {
